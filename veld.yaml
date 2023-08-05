@@ -1,0 +1,24 @@
+x-veld:
+  executable:
+    about:
+      description: "dummy veld for testing and showcasing"
+    input:
+      a:
+        path: /veld/input/a/data.xml
+        format: "xml"
+      b:
+        path: /veld/input/b/schema.xsd
+        format: "xsd"
+        optional: true
+    output:
+      path: /veld/output/result.txt
+      format: "txt"
+
+services:
+  veld:
+    build: .
+    volumes:
+      - ./src/:/veld/executable/
+    command: bash /veld/executable/validate.sh
+
+

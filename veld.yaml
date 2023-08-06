@@ -6,13 +6,16 @@ x-veld:
       a:
         path: /veld/input/a/data.xml
         format: "xml"
+        kind: "dummy data"
       b:
         path: /veld/input/b/schema.xsd
         format: "xsd"
+        kind: "dummy data"
         optional: true
     output:
       path: /veld/output/result.txt
       format: "txt"
+      kind: "dummy data"
 
 services:
   veld:

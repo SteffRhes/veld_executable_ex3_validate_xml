@@ -1,29 +1,23 @@
 input_xml=/veld/input/a/data.xml
 input_xsd=/veld/input/b/schema.xsd
-output_sh=/veld/output/result.sh
+output_txt=/veld/output/result.txt
 
 if [ -f /veld/input/b/schema.xsd ]; then
   output=$(xmllint --schema ${input_xsd}  ${input_xml} --noout 2>&1)
   if [[ $output == *"validates" ]]; then
-    xml_is_valid="true";
-    xsd_was_used="true";
+    result="valid, with xsd check";
   else
-    xml_is_valid="false";
-    xsd_was_used="true";
+    result="invalid, with xsd check";
   fi
 else 
   output=$(xmllint --noout ${input_xml} 2>&1)
   if [ -z "$output" ]; then
-    xml_is_valid="true";
-    xsd_was_used="false";
+    result="valid xml, without xsd check"; 
   else
-    xml_is_valid="false";
-    xsd_was_used="false";
+    result="invalid xml, without xsd check"; 
   fi
 fi
 
-echo "# reuse these variables in bash by sourcing it" > $output_sh
-echo "xml_is_valid: ${xml_is_valid}"
-echo "xsd_was_used: ${xsd_was_used}"
-typeset -p xml_is_valid xsd_was_used >> $output_sh
+echo $result
+echo $result > $output_txt
 

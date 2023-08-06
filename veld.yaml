@@ -13,8 +13,8 @@ x-veld:
         kind: "dummy data"
         optional: true
     output:
-      path: /veld/output/result.sh
-      format: "sh"
+      path: /veld/output/result.txt
+      format: "txt"
       kind: "dummy data"
 
 services:

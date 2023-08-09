@@ -21,7 +21,7 @@ services:
   veld:
     build: .
     volumes:
-      - ./src/:/veld/executable/
+      - ./validate.sh:/veld/executable/validate.sh
     command: bash /veld/executable/validate.sh
 
 

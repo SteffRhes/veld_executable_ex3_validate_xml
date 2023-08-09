@@ -1,5 +1,5 @@
-input_xml=/veld/input/a/data.xml
-input_xsd=/veld/input/b/schema.xsd
+input_xml=/veld/input/data.xml
+input_xsd=/veld/input/schema.xsd
 output_txt=/veld/output/result.txt
 
 if [ -f /veld/input/b/schema.xsd ]; then

@@ -1,21 +1,25 @@
 x-veld:
   executable:
     about:
-      description: "dummy veld for testing and showcasing"
+      description: "example veld for testing and showcasing"
+    topics: "data validation"
     input:
       a:
-        path: /veld/input/a/data.xml
+        type: "files"
         format: "xml"
-        kind: "dummy data"
+        content: "dummy data"
+        path: /veld/input/data.xml
       b:
-        path: /veld/input/b/schema.xsd
+        type: "files"
         format: "xsd"
-        kind: "dummy data"
+        content: "dummy data"
+        path: /veld/input/schema.xsd
         optional: true
     output:
-      path: /veld/output/result.txt
+      type: "files"
       format: "txt"
-      kind: "dummy data"
+      content: "dummy data"
+      path: /veld/output/result.txt
 
 services:
   veld:

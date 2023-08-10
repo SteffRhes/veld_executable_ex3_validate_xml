@@ -2,14 +2,15 @@ x-veld:
   executable:
     about:
       description: "example veld for testing and showcasing"
-    topics: "data validation"
+      topics: "data validation"
     input:
-      a:
+      # executables can take several inputs / outputs. If that is the case, define them as a list
+      -
         type: "files"
         format: "xml"
         content: "dummy data"
         path: /veld/input/data.xml
-      b:
+      -
         type: "files"
         format: "xsd"
         content: "dummy data"

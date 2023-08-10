@@ -1,8 +1,8 @@
-input_xml=/veld/input/a/data.xml
-input_xsd=/veld/input/b/schema.xsd
+input_xml=/veld/input/data.xml
+input_xsd=/veld/input/schema.xsd
 output_txt=/veld/output/result.txt
 
-if [ -f /veld/input/b/schema.xsd ]; then
+if [ -f $input_xsd ]; then
   output=$(xmllint --schema ${input_xsd}  ${input_xml} --noout 2>&1)
   if [[ $output == *"validates" ]]; then
     result="valid, with xsd check";
